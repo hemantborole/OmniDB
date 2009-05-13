@@ -1,0 +1,23 @@
+OmniDB lets you create a distributed layer of cache for your database.
+The cache and database are both configurable.
+Currently the cache is configured to use memcache.
+The database is configured to use mysql or sqlite.
+
+												             --------------
+																		 | Remote DB  |
+																		 L-------------
+																				  |
+																					|
+																					|
+												         ---------------------------
+																 | Distributed Cache Layer |
+																 L--------------------------
+																				  |
+																					|
+																					|
+		-------------------------------------------------------------------------
+		|												|												|												|
+		|												|												|												|
+-------------------		-------------------		-------------------		-------------------
+|Client instance 1|		|Client instance 1|		|Client instance 1|		|Client instance 1|
+L------------------		L------------------		L------------------		L------------------
