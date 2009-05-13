@@ -1,0 +1,13 @@
+cachedb:
+  adapter: memcache
+  host:
+    - localhost:11211
+    - ves2.wc1:9999
+
+storagedb:
+  adapter: mysql
+  host: localhost
+  port: 3306
+  username: root
+  password: 
+  dbname: dump
