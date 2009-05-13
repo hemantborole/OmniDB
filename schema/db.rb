@@ -4,7 +4,6 @@ require File.join(LIB_DIR,'omni_db', 'config')
 require File.join('sequel','extensions','query')
 
 class DB
-  ## Sequelize the above schema 
   include OmniDb
   def self.create_db
 
@@ -16,9 +15,9 @@ class DB
 		connection << " use #{dbname} "
 		connection << "
 				create table cache (
-					id varchar(255) primary key,
+					id bigint primary key not null auto_increment,
 					name varchar(255) unique,
-					value varchar(255),
+					value longblob,
 					end_ts timestamp default 0,
 					create_by varchar(255)
 				)"
