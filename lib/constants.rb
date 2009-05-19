@@ -1,0 +1,1 @@
+LIFE_TIME=86400 ## 1 day.

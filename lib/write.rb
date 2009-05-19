@@ -2,12 +2,12 @@ lib_dir = File.join(File.dirname(__FILE__),'..','lib')
 require File.join(lib_dir,'omni_db', 'config')
 require File.join(lib_dir, 'db_utils')
 require File.join(lib_dir, 'init_cache')
+require File.join(lib_dir, 'constants')
 
 class Writer
 
   include OmniDb
 	CACHE_OBJECT_SIZE = 5000
-	LIFE_TIME = 1800 # seconds
 
 	public
 	def atomic_write(key, value, life_time = LIFE_TIME)
