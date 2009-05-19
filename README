@@ -19,5 +19,5 @@ The database is configured to use mysql or sqlite.
 		|												|												|												|
 		|												|												|												|
 -------------------		-------------------		-------------------		-------------------
-|Client instance 1|		|Client instance 1|		|Client instance 1|		|Client instance 1|
+|Client instance 1|		|Client instance 2|		|Client instance 3|		|Client instance 4|
 L------------------		L------------------		L------------------		L------------------
