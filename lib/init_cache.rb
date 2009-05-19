@@ -8,6 +8,14 @@ require 'memcache'
 require 'singleton'
 
 class DHTCache
+	def self.hash_in(key, value, life_time = LIFE_TIME)
+		CACHE.set(key, value, life_time)
+	end
+
+	def self.hash_out(key)
+		CACHE.get(key)
+	end
+
 	private
   include OmniDb
   include Singleton
@@ -17,12 +25,4 @@ class DHTCache
   CACHE.servers = params['host']
 	LIFE_TIME = 1800	# seconds
 
-	public
-	def self.hash_in(key, value, life_time = LIFE_TIME
-		CACHE.set(key, value, life_time)
-	end
-
-	def self.hash_out
-		CACHE.get(key)
-	end
 end
