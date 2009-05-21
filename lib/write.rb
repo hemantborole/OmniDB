@@ -28,11 +28,10 @@ class Writer
   ## the cache must be refilled with values from the storage server.
   def refill
     now = Time.now.to_i
-    require 'ruby-debug'; debugger
     cache_set.each {|rec|
-      ttl = rec.life_time.to_i - now
-      cache_write( rec.key, rec.value, ttl ) if ttl > 0 \
-          if rec.value and rec.value.length > MAX_OBJ_SIZE and ttl > 0
+      ttl = rec[:end_ts].to_i - now
+      cache_write( rec[:key], rec[:value], ttl ) if ttl > 0 \
+          if rec[:value] and rec[:value].length > MAX_OBJ_SIZE and ttl > 0
     }
   end
 
@@ -52,7 +51,7 @@ class Writer
 
 	def db_write(key, value, life_time = LIFE_TIME)
     begin
-		  end_ts = (Time.now + life_time).to_s
+		  end_ts = Time.now + life_time
 		  cache_set.insert( :name => key, :value => value, :end_ts => end_ts,
                 :create_by => 'dummy')
     rescue Sequel::DatabaseError => exc

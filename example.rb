@@ -49,5 +49,5 @@ def test2
   end
 end
 
-#Writer.new.refill
+Writer.new.refill
 test2
