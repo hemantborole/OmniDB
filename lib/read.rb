@@ -15,6 +15,7 @@ class Reader
 
 	def fallback( key )
 		cache_set = get_dbhandle[:cache].where( :name => key )
+		cache_set.first[:value]
 	end
 	attr_accessor :dbhandle
 end
