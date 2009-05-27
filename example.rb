@@ -12,8 +12,8 @@ def test1
       w.atomic_write(key, value)
       p "Getting value from cache : #{DHTCache.hash_out(key)}"
     rescue Exception => e
-      p "Ex, the object is already in database, ignoring database write"
       p e.message
+			raise e
     end
   else
     puts "Usage: example.rb <key> <value>"
@@ -54,4 +54,5 @@ def test2
 end
 
 Writer.new.refill
-test2
+#test2
+test1
