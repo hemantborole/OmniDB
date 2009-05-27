@@ -7,9 +7,9 @@ developer_deps = {}
 spec = Gem::Specification.new { |s|
 	s.platform = Gem::Platform::RUBY
 
-	s.author = "AT&T Interactive R&D"
-	s.email = "solutions.research@attinteractive.com"
-	s.files = Dir["{lib,doc,bin,ext}/**/*"].delete_if {|f|
+	s.author = "Hemant Borole And Clarke Retzer"
+	s.email = "hemantborole@gmail.com"
+	s.files = Dir["{lib,configs,schema,bin}/**/*"].delete_if {|f|
 		/\/rdoc(\/|$)/i.match f
 	} + %w(Rakefile)
 	s.require_path = 'lib'
