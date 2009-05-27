@@ -1,5 +1,6 @@
 #!/usr/bin/ruby
 require 'lib/write'
+require 'lib/read'
 
 def test1
   if ARGV.length == 2
@@ -41,6 +42,9 @@ def test2
       p "Got #{DHTCache.hash_out(key)}"
     else
       p "Got nothing, falling back to original store..."
+			rd = Reader.new
+			vv = rd.fallback( key )
+      p "Got from storageDB #{vv}"
       ## TODO - Add fetching from storage logic.
     end
 
